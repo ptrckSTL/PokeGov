@@ -1,6 +1,6 @@
 package com.example.emptyexercise.dagger
 
-import com.example.emptyexercise.Client
+import com.example.emptyexercise.data.appClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,5 +12,5 @@ import javax.inject.Singleton
 class NetworkModule {
     @Singleton
     @Provides
-    fun provideKtorClient() = Client().ktorClient
+    fun provideKtorClient() = appClient
 }

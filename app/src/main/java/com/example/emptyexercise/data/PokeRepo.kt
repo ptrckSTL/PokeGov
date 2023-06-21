@@ -9,10 +9,10 @@ import javax.inject.Inject
 interface PokeRepo {
     suspend fun getPokemonData(): NetworkResult<PokeResponse, NetworkError>
 
-
     class Impl @Inject constructor(private val client: HttpClient) : PokeRepo {
         override suspend fun getPokemonData() = networkResultFrom {
-            client.get("https://api.pokemontcg.io/v2/cards?q=set.name:base").body<PokeResponse>()
+            client.get("https://api.pokemontcg.io/v2/cards?page=1&pageSize=40&q=set.id:sm6")
+                .body<PokeResponse>()
         }
     }
 

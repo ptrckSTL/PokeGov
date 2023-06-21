@@ -19,8 +19,6 @@ data class PokemonData(
     val images: Images,
     @SerialName("name")
     val name: String,
-    @SerialName("rarity")
-    val rarity: String,
 )
 
 @Serializable
